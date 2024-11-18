@@ -1,0 +1,4 @@
+package br.com.fiap.easyreserve.gateway.database.jpa.repository;
+
+public class RestaurantRepository {
+}

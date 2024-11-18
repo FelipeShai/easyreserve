@@ -1,0 +1,4 @@
+package br.com.fiap.easyreserve.usecase;
+
+public class ManageReservationsUseCase {
+}
