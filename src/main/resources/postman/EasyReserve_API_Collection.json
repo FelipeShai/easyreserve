@@ -1,0 +1,158 @@
+{
+  "info": {
+    "name": "EasyReserve API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Restaurants",
+      "item": [
+        {
+          "name": "Create Restaurant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"La Bella\",\n  \"location\": \"Downtown\",\n  \"cuisineType\": \"Italian\",\n  \"openingHours\": \"10:00-22:00\",\n  \"capacity\": 50\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/restaurants",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Find Restaurants",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/restaurants?location=Downtown",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ],
+              "query": [
+                {
+                  "key": "location",
+                  "value": "Downtown"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reservations",
+      "item": [
+        {
+          "name": "Create Reservation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"restaurantId\": 1,\n  \"customerName\": \"John Doe\",\n  \"customerContact\": \"john.doe@example.com\",\n  \"reservationDateTime\": \"2024-11-20T19:00:00\",\n  \"numberOfGuests\": 4,\n  \"status\": \"CONFIRMED\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/reservations",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "reservations"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Reservations by Restaurant",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/reservations/restaurant/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "reservations",
+                "restaurant",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cancel Reservation",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/reservations/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "reservations",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Create Review",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"restaurantId\": 1,\n  \"customerName\": \"John Doe\",\n  \"comment\": \"Great food and service!\",\n  \"rating\": 5\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/reviews",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "reviews"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
