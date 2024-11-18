@@ -1,0 +1,4 @@
+package br.com.fiap.easyreserve.gateway.database.jpa.entity;
+
+public class RestaurantEntity {
+}

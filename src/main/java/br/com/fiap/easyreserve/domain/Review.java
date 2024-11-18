@@ -6,9 +6,9 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class Review {
-    private Long id;
-    private Long restaurantId;
-    private Long userId;
-    private String comments;
-    private int rating;
+    private Long id; // Identificador único
+    private Long restaurantId; // ID do restaurante associado
+    private String customerName; // Nome do cliente que avaliou
+    private String comment; // Comentário sobre a experiência
+    private int rating; // Nota (1 a 5)
 }
